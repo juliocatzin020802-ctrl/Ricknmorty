@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explorador Rick and Morty</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="header">
+    <h1>Explorador Rick and Morty</h1>
+    <p>Busca personajes, filtra resultados y guarda tus favoritos.</p>
+  </header>
+
+  <main class="container">
+    <section class="controls" aria-label="Búsqueda y filtros">
+      <input type="search" id="search" placeholder="Buscar por nombre (ej. Rick)" aria-label="Buscar personaje">
+
+      <select id="filter-status" aria-label="Filtrar por estado">
+        <option value="">Todos los estados</option>
+        <option value="alive">Vivo</option>
+        <option value="dead">Muerto</option>
+        <option value="unknown">Desconocido</option>
+      </select>
+
+      <select id="filter-gender" aria-label="Filtrar por género">
+        <option value="">Todos los géneros</option>
+        <option value="female">Femenino</option>
+        <option value="male">Masculino</option>
+        <option value="genderless">Sin género</option>
+        <option value="unknown">Desconocido</option>
+      </select>
+
+      <select id="filter-species" aria-label="Filtrar por especie">
+        <option value="">Todas las especies</option>
+        <option value="Human">Humano</option>
+        <option value="Alien">Alien</option>
+        <option value="Humanoid">Humanoide</option>
+        <option value="Robot">Robot</option>
+        <option value="Animal">Animal</option>
+        <option value="Cronenberg">Cronenberg</option>
+        <option value="Mythological Creature">Criatura mitológica</option>
+      </select>
+
+      <button id="btn-clear" type="button">Limpiar</button>
+    </section>
+
+    <p id="message" class="message" role="status" aria-live="polite"></p>
+
+    <h2>Personajes</h2>
+    <section id="results" class="grid" aria-label="Resultados"></section>
+
+    <nav class="pagination" aria-label="Paginación">
+      <button id="btn-prev" type="button">&laquo; Anterior</button>
+      <span id="page-info">Página 1</span>
+      <button id="btn-next" type="button">Siguiente &raquo;</button>
+    </nav>
+
+    <h2>Mis favoritos <span id="fav-count" class="badge">0</span></h2>
+    <p id="fav-message" class="message"></p>
+    <section id="favorites" class="grid" aria-label="Favoritos"></section>
+  </main>
+
+  <footer class="footer">
+    <p>Datos de <a href="https://rickandmortyapi.com" target="_blank" rel="noopener">The Rick and Morty API</a></p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
